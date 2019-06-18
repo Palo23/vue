@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hola Mundo con Vue.js</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
@@ -12,17 +14,21 @@
 
         <h1>{{titulo}}</h1>
 
-
-        <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
-        <button @click="agregarFruta">Agregar</button>
-
-        <ul>
-            <li v-for="fruta of frutas">
-                {{fruta.cantidad}} - {{fruta.nombre}}
-                <span v-if="fruta.cantidad ==    0"> - Sin Stock</span>
-            </li>
-        </ul>
-
+        <form class="form-group">
+                <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+                <button @click="agregarFruta">Agregar</button>
+        
+                <ul>
+                    <li v-for="fruta of frutas">
+                        <input type="number" v-model.number="fruta.cantidad">
+                        {{fruta.nombre}}
+                        <span v-if="fruta.cantidad ==    0"> - Sin Stock</span>
+                    </li>
+                </ul>
+                <h4>Total {{sumarFrutas}}</h4>
+        
+        </form>
+        
 
    </div>
     
