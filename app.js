@@ -5,14 +5,14 @@ const app = new Vue({
         contador: 0
     },
     computed: {
-        invertido(){
+        invertido() {
             return this.mensaje.split('').reverse().join('');
         },
-        color(){
+        color() {
             return {
-                'bg-success' : this.contador <= 10,
-                'bg-warning' : this.contador > 10 && this.contador < 20,
-                'bg-danger'  : this.contador >= 20
+                'bg-success': this.contador <= 10,
+                'bg-warning': this.contador > 10 && this.contador < 20,
+                'bg-danger': this.contador >= 20
             }
         }
     }
